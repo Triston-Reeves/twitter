@@ -1,0 +1,16 @@
+<h1>HomePage</h1>
+<a href="/addtweet/"><button>Add Tweet!</button></a>
+<br><br>
+{{ user.username }}
+<br><br>
+{% for tweeter in my_tweets %}
+    <ul>
+        {{tweeter.tweet}}
+        <br>
+        {{tweeter.tweet_author}}
+    </ul>
+{% endfor %}
+<br><br>
+{{ Auth }}
+<br><br>
+<a href="/logout/">Logout!</a>
