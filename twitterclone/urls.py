@@ -21,12 +21,12 @@ from notification import views as Note_views
 from tweet import views as Tweet_views
 
 urlpatterns = [
-    path('', User_view.index_view, name="homepage"),
+    path('', User_view.IndexView.as_view(), name="homepage"),
     path('login/', Auth_views.login_view, name="login_view"),
     path('logout/', Auth_views.logout_view, name="logout_view"),
     # path('follow/<int:follow_id>/', views.following_view), 
     # path('unfollow/<int:unfollow_id>/', views.unfollowing_view),
-    path('addtweet/', Tweet_views.add_tweet, name="add_tweet"),
-    path('signup/', User_view.signup_view, name="signup_view"),
+    path('addtweet/', Tweet_views.AddTweetView.as_view(), name="add_tweet"),
+    path('signup/', User_view.SignupView.as_view(), name="signup_view"),
     path('admin/', admin.site.urls),
 ]
